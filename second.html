@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winners - Verification Complete</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .verification-status {
+            margin-bottom: 30px;
+        }
+
+        .status-hindi {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #28a745;
+            margin-bottom: 8px;
+        }
+
+        .status-english {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .winners-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #e9ecef;
+        }
+
+        .winners-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .winner-item {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .winner-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .winner-position {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .winner-name {
+            color: #666;
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .first-winner {
+            border-left-color: #ffd700;
+        }
+
+        .first-winner .winner-position {
+            color: #ffd700;
+        }
+
+        .second-winner {
+            border-left-color: #c0c0c0;
+        }
+
+        .second-winner .winner-position {
+            color: #c0c0c0;
+        }
+
+        .third-winner {
+            border-left-color: #cd7f32;
+        }
+
+        .third-winner .winner-position {
+            color: #cd7f32;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .about-btn {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            color: white;
+        }
+
+        .about-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+        }
+
+        .footer-text {
+            margin-top: 25px;
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            .status-hindi {
+                font-size: 1.5rem;
+            }
+            
+            .status-english {
+                font-size: 1rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .success-icon {
+                font-size: 3rem;
+            }
+        }
+
+        /* Celebration particles */
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.5;
+            }
+        }
+
+        .particle:nth-child(1) { left: 20%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 40%; animation-delay: 0.5s; }
+        .particle:nth-child(3) { left: 60%; animation-delay: 1s; }
+        .particle:nth-child(4) { left: 80%; animation-delay: 1.5s; }
+    </style>
+</head>
+<body>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
+    <div class="container">
+        <div class="success-icon">🎉</div>
+        
+        <div class="verification-status">
+            <div class="status-hindi">आप सफलतापूर्वक वेरिफाई हो गए हैं!</div>
+            <div class="status-english">You have been successfully verified!</div>
+        </div>
+
+        <div class="winners-section">
+            <div class="winners-title">
+                🏆 Winner Announcement
+            </div>
+            
+            <div class="winner-item first-winner">
+                <div class="winner-position">🥇 1st Winner</div>
+                <div class="winner-name">Soon...</div>
+            </div>
+            
+            <div class="winner-item second-winner">
+                <div class="winner-position">🥈 2nd Winner</div>
+                <div class="winner-name">Soon...</div>
+            </div>
+            
+            <div class="winner-item third-winner">
+                <div class="winner-position">🥉 3rd Winner</div>
+                <div class="winner-name">Soon...</div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="#" class="action-btn contact-btn" id="contactBtn">
+                <span>📞</span>
+                Contact Us
+            </a>
+            <a href="#" class="action-btn about-btn" id="aboutBtn">
+                <span>ℹ️</span>
+                About Us
+            </a>
+        </div>
+
+        <div class="footer-text">
+            Stay tuned for winner announcements!<br>
+            Winners will be declared soon.
+        </div>
+    </div>
+
+    <script>
+        // YouTube links - Replace these with your actual YouTube URLs
+        const CONTACT_YOUTUBE_URL = 'https://www.youtube.com/@YourChannelName';
+        const ABOUT_YOUTUBE_URL = 'https://www.youtube.com/@YourChannelName';
+
+        // Contact button click handler
+        document.getElementById('contactBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open(CONTACT_YOUTUBE_URL, '_blank');
+        });
+
+        // About button click handler
+        document.getElementById('aboutBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open(ABOUT_YOUTUBE_URL, '_blank');
+        });
+
+        // Add celebration effect on page load
+        window.addEventListener('load', function() {
+            // Create more particles dynamically
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    createParticle();
+                }, i * 200);
+            }
+        });
+
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(particle);
+            
+            // Remove particle after animation
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.parentNode.removeChild(particle);
+                }
+            }, 3000);
+        }
+
+        // Confetti effect every 5 seconds
+        setInterval(() => {
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    createParticle();
+                }, i * 100);
+            }
+        }, 5000);
+    </script>
+</body>
+                                                  </html>
