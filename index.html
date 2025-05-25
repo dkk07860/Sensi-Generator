@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - RechargeWin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      overflow: hidden;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      padding: 40px 30px;
+      text-align: center;
+      color: white;
+    }
+
+    .app-logo {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: bold;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .header p {
+      font-size: 16px;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .content {
+      padding: 40px 30px;
+      max-height: 60vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #667eea #f1f1f1;
+    }
+
+    .content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .content::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .content::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 10px;
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section h2 {
+      color: #667eea;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section h3 {
+      color: #333;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      margin-top: 20px;
+    }
+
+    .section p {
+      line-height: 1.6;
+      margin-bottom: 12px;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+      border: 1px solid rgba(102, 126, 234, 0.2);
+      padding: 20px;
+      border-radius: 16px;
+      margin: 20px 0;
+    }
+
+    .highlight-box h3 {
+      color: #667eea;
+      margin-top: 0;
+    }
+
+    .security-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .feature-card {
+      background: rgba(76, 175, 80, 0.1);
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background: #4caf50;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+    }
+
+    .footer-actions {
+      background: #f8f9fa;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #667eea;
+      cursor: pointer;
+    }
+
+    .checkbox-container label {
+      font-size: 14px;
+      line-height: 1.4;
+      color: #555;
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .action-button {
+      width: 100%;
+      padding: 18px;
+      border: none;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .accept-button {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .accept-button.enabled {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .accept-button.enabled:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4);
+    }
+
+    .decline-button {
+      background: transparent;
+      color: #666;
+      border: 2px solid #ddd;
+    }
+
+    .decline-button:hover {
+      background: #f5f5f5;
+      border-color: #ccc;
+    }
+
+    .icon {
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 10px;
+        border-radius: 20px;
+      }
+      
+      .header, .content, .footer-actions {
+        padding: 24px 20px;
+      }
+      
+      .header h1 {
+        font-size: 28px;
+      }
+      
+      .content {
+        max-height: 50vh;
+      }
+      
+      .security-features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="app-logo">🎁</div>
+      <h1>RechargeWin</h1>
+      <p>Free Mobile Recharge Giveaways</p>
+    </div>
+
+    <div class="content">
+      <div class="section">
+        <h2><span class="icon">🔒</span>Privacy Policy / गोपनीयता नीति</h2>
+        <p><strong>Last Updated:</strong> May 2025 | <strong>अंतिम अपडेट:</strong> मई 2025</p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>🛡️ Your Privacy is Our Priority / आपकी गोपनीयता हमारी प्राथमिकता है</h3>
+        <p><strong>English:</strong> At RechargeWin, we are committed to protecting your personal information and ensuring complete transparency about how we handle your data.</p>
+        <p><strong>हिंदी:</strong> RechargeWin में, हम आपकी व्यक्तिगत जानकारी की सुरक्षा के लिए प्रतिबद्ध हैं और आपका डेटा कैसे संभाला जाता है, इसके बारे में पूर्ण पारदर्शिता सुनिश्चित करते हैं।</p>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">📱</span>Data Collection / डेटा संग्रह</h2>
+        <h3>What We Collect / हम क्या एकत्र करते हैं:</h3>
+        <p><strong>English:</strong> We only collect your mobile number for the sole purpose of participating in our free recharge giveaways and announcing winners.</p>
+        <p><strong>हिंदी:</strong> हम केवल आपका मोबाइल नंबर एकत्र करते हैं जो केवल हमारे मुफ्त रिचार्ज गिवअवे में भाग लेने और विजेताओं की घोषणा के लिए है।</p>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">🚫</span>What We DON'T Do / हम क्या नहीं करते</h2>
+        <div class="security-features">
+          <div class="feature-card">
+            <div class="feature-icon">❌</div>
+            <h4>No Data Sharing</h4>
+            <p>We never share your mobile number with third parties</p>
+            <p>हम कभी भी आपका मोबाइल नंबर तीसरे पक्ष के साथ साझा नहीं करते</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔐</div>
+            <h4>No Misuse</h4>
+            <p>Your data is never used for unauthorized purposes</p>
+            <p>आपका डेटा कभी भी अनधिकृत उद्देश्यों के लिए उपयोग नहीं किया जाता</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📵</div>
+            <h4>No Spam</h4>
+            <p>We don't send promotional messages or spam</p>
+            <p>हम प्रचार संदेश या स्पैम नहीं भेजते</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">🎯</span>Purpose of Data Collection / डेटा संग्रह का उद्देश्य</h2>
+        <p><strong>English:</strong> Your mobile number is used exclusively for:</p>
+        <p><strong>हिंदी:</strong> आपका मोबाइल नंबर विशेष रूप से इसके लिए उपयोग किया जाता है:</p>
+        <ul style="margin: 16px 0; padding-left: 20px; line-height: 1.8;">
+          <li>Giveaway participation / गिवअवे में भागीदारी</li>
+          <li>Winner announcement / विजेता की घोषणा</li>
+          <li>Free recharge delivery / मुफ्त रिचार्ज की डिलीवरी</li>
+          <li>Contest verification / प्रतियोगिता सत्यापन</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">🔒</span>Data Security / डेटा सुरक्षा</h2>
+        <p><strong>English:</strong> We implement industry-standard security measures to protect your personal information. Your data is stored securely and access is strictly limited to authorized personnel only.</p>
+        <p><strong>हिंदी:</strong> हम आपकी व्यक्तिगत जानकारी की सुरक्षा के लिए उद्योग-मानक सुरक्षा उपाय लागू करते हैं। आपका डेटा सुरक्षित रूप से संग्रहीत है और पहुंच केवल अधिकृत कर्मचारियों तक सीमित है।</p>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">📞</span>Contact Us / संपर्क करें</h2>
+        <p><strong>English:</strong> If you have any questions about this Privacy Policy or your data, please contact us.</p>
+        <p><strong>हिंदी:</strong> यदि आपके पास इस गोपनीयता नीति या आपके डेटा के बारे में कोई प्रश्न हैं, तो कृपया हमसे संपर्क करें।</p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>✅ Our Commitment / हमारी प्रतिबद्धता</h3>
+        <p><strong>English:</strong> We guarantee that your personal data will remain private and secure. We will never misuse, sell, or share your information with anyone.</p>
+        <p><strong>हिंदी:</strong> हम गारंटी देते हैं कि आपका व्यक्तिगत डेटा निजी और सुरक्षित रहेगा। हम कभी भी आपकी जानकारी का दुरुपयोग, बिक्री या किसी के साथ साझा नहीं करेंगे।</p>
+      </div>
+    </div>
+
+    <div class="footer-actions">
+      <div class="checkbox-container">
+        <input type="checkbox" id="acceptPolicy" onchange="toggleAcceptButton()">
+        <label for="acceptPolicy">
+          <strong>I have read and agree to the Privacy Policy</strong><br>
+          <strong>मैंने गोपनीयता नीति पढ़ी है और इससे सहमत हूं</strong><br>
+          <small>By checking this box, you consent to our data collection practices as described above.</small><br>
+          <small>इस बॉक्स को चेक करके, आप ऊपर वर्णित हमारी डेटा संग्रह प्रथाओं के लिए सहमति देते हैं।</small>
+        </label>
+      </div>
+      
+      <button id="acceptBtn" class="action-button accept-button" onclick="acceptAndProceed()" disabled>
+        🚀 Accept & Start / स्वीकार करें और शुरू करें
+      </button>
+      
+      <button class="action-button decline-button" onclick="declinePolicy()">
+        ❌ Decline / अस्वीकार करें
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function toggleAcceptButton() {
+      const checkbox = document.getElementById('acceptPolicy');
+      const acceptBtn = document.getElementById('acceptBtn');
+      
+      if (checkbox.checked) {
+        acceptBtn.classList.add('enabled');
+        acceptBtn.disabled = false;
+      } else {
+        acceptBtn.classList.remove('enabled');
+        acceptBtn.disabled = true;
+      }
+    }
+
+    function acceptAndProceed() {
+      const checkbox = document.getElementById('acceptPolicy');
+      
+      if (!checkbox.checked) {
+        alert('Please read and accept the Privacy Policy first.\nकृपया पहले गोपनीयता नीति पढ़ें और स्वीकार करें।');
+        return;
+      }
+      
+      // Show loading state
+      const acceptBtn = document.getElementById('acceptBtn');
+      acceptBtn.innerHTML = '⏳ Loading... / लोड हो रहा है...';
+      acceptBtn.disabled = true;
+      
+      // Redirect to first.html after a brief delay
+      setTimeout(() => {
+        window.location.href = 'first.html';
+      }, 1500);
+    }
+
+    function declinePolicy() {
+      if (confirm('Are you sure you want to decline? You will not be able to participate in giveaways.\nक्या आप वाकई अस्वीकार करना चाहते हैं? आप गिवअवे में भाग नहीं ले सकेंगे।')) {
+        alert('Thank you for your time. You can return anytime to accept our policy.\nआपके समय के लिए धन्यवाद। आप हमारी नीति स्वीकार करने के लिए कभी भी वापस आ सकते हैं।');
+        // Optionally redirect to a different page or close
+        window.close();
+      }
+    }
+
+    // Smooth scroll for long content
+    document.querySelector('.content').addEventListener('scroll', function() {
+      const scrolled = this.scrollTop;
+      const maxScroll = this.scrollHeight - this.clientHeight;
+      const scrollPercent = scrolled / maxScroll;
+      
+      // Add visual feedback for scroll progress
+      document.querySelector('.header').style.opacity = 1 - (scrollPercent * 0.3);
+    });
+  </script>
+</body>
+  </html>
